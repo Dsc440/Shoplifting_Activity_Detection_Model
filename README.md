@@ -49,7 +49,17 @@ The shoplifting detection model is based on a CNLSTM2D architecture, combining C
 
 ## Customization
 
-You can customize the model further by training it on your own dataset or adjusting hyperparameters in the code. Refer to the model architecture in `shoplifting_model.py` for more details.
+You can customize the model further by training it on your own dataset. If you wish to use the dataset we used for training, you can find it [here](https://data.mendeley.com/datasets/r3yjf35hzr/1). The dataset consists of labeled examples of shoplifting activity in CCTV footage.
+
+To train the model on your own dataset, follow these steps:
+
+1. Download the dataset from [this link](https://data.mendeley.com/datasets/r3yjf35hzr/1).
+
+2. Preprocess your dataset to ensure it has the required structure for training. You may need to adapt the data loading and preprocessing steps in the code accordingly.
+
+3. Train the model using the updated dataset. You can adjust hyperparameters, such as the number of epochs, learning rate, and model architecture, to fine-tune the performance based on your specific data.
+
+Refer to the `convlstmtry.ipynb` file for details on the model architecture and training process.
 
 ## Model Training and Evaluation
 
