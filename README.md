@@ -26,11 +26,10 @@ pip install tensorflow keras opencv-python numpy
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/shoplifting-detection.git
-cd shoplifting-detection
+git clone https://github.com/Dsc440/Shoplifting_Activity_Detection_Model.git
 ```
 
-2. Open the `model_testing.py` file and update the `input_video_path` variable with the path to the CCTV footage you want to test.
+2. Open the `Test_model.py` file and update the `input_video_path` variable with the path to the CCTV footage you want to test.
 
 3. Save the changes.
 
@@ -39,7 +38,7 @@ cd shoplifting-detection
 Execute the following command to run the model testing script:
 
 ```bash
-python model_testing.py
+python Test_model.py
 ```
 
 The script will load the pre-trained CNLSTM2D model and apply it to the specified CCTV footage to detect shoplifting activity.
@@ -52,6 +51,45 @@ The shoplifting detection model is based on a CNLSTM2D architecture, combining C
 
 You can customize the model further by training it on your own dataset or adjusting hyperparameters in the code. Refer to the model architecture in `shoplifting_model.py` for more details.
 
+## Model Training and Evaluation
+
+### Loss Plot
+
+During the training of the shoplifting detection model, the loss function is monitored and recorded at each epoch. The loss plot provides insights into how well the model is learning from the training data and whether it is converging to a good solution.
+
+![Loss Plot](https://github.com/Dsc440/Shoplifting_Activity_Detection_Model/blob/main/loss_plot.png?raw=true)
+
+### Performance Metrics
+
+The performance of the model is evaluated using various metrics, including but not limited to:
+
+- **Accuracy:** Measures the overall correctness of the model's predictions.
+- **Precision:** Indicates the ratio of true positive predictions to the total positive predictions, emphasizing the accuracy of positive predictions.
+- **Recall:** Measures the ratio of true positive predictions to the total actual positives, highlighting the ability to capture positive instances.
+- **F1 Score:** The harmonic mean of precision and recall, providing a balanced measure of a model's performance.
+
+For a detailed understanding of model performance, consider reviewing the confusion matrix, which provides a breakdown of true positive, true negative, false positive, and false negative predictions.
+
+### Confusion Matrix
+
+The confusion matrix for the shoplifting detection model is presented below:
+
+![Confusion Matrix](https://github.com/Dsc440/Shoplifting_Activity_Detection_Model/blob/main/conf_matrix%20(1).png?raw=true)
+
+**Confusion Matrix:**
+
+|                | Predicted Negative | Predicted Positive |
+| -------------- | ------------------ | ------------------ |
+| **Actual Negative** | True Negative | False Positive |
+| **Actual Positive** | False Negative | True Positive |
+
+The confusion matrix helps in understanding the distribution of model predictions across different classes. It is a valuable tool for assessing the model's performance and identifying areas of improvement.
+
+**Model Metrics:**
+- Accuracy: 0.70
+- F1 Score: 0.705
+
+These metrics are calculated during the evaluation phase.
 ## Acknowledgments
 
 - The model architecture is inspired by [Spatio-Temporal ConvLSTM for Crash Prediction](https://towardsdatascience.com/spatial-temporal-convlstm-for-crash-prediction-411909ed2cfa).
